@@ -1,0 +1,25 @@
+{% load i18n %}
+<!DOCTYPE:html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    {% block head %}
+      <title>
+      {% block title %}
+        {% translate "Title" %}
+      {% endblock title %}
+      </title>
+    {% endblock head %}
+  </head>
+  <body>
+    {% block main %}
+    <a href="{% url "shopapp:index" %}">
+      {% translate "Back to main page" %}
+      {% comment %} Вернуться на главную страницу {% endcomment %}
+    </a>
+    {% endblock main %}
+    {% block body %}
+      {% translate "Block body" %}
+    {% endblock body %}
+  </body>
+</html>

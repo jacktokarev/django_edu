@@ -1,0 +1,31 @@
+{% extends "myauth/base.html" %}
+
+{% block title %}
+  Обо мне
+{% endblock title %}
+{% block body %}
+  <h1>Информация о пользователе</h1>
+  {% if user.is_authenticated %}
+    <h2>Детали:</h2>
+    <p>Пользователь: {{ user.username }}</p>
+    <p>Имя: {{ user.first_name }}</p>
+    <p>Фамилия: {{ user.last_name }}</p>
+    <p>E-mail: {{ user.email }}</p>
+    <p>Биография: {{ user.profile.bio }}</p>
+    {% if user.profile.avatar %}
+      <div>
+        <img src={{ user.profile.avatar.url }} alt="avatar for user_"{{ user.username }}>
+      </div>
+      {% firstof "Изменить" as action %}
+    {% else %}
+      <p>Пользователь {{ user.username }} не загрузил аватар</p>
+      {% firstof "Загрузить" as action %}
+    {% endif %}
+      {% if not upload_result %}{% firstof True as permission %}{% endif %}
+      {% include "myauth/avatar-upload.html" %}
+   {% else %}
+    <h2>Вход не выполнен.</h2>
+    <a href="{% url 'myauth:login' %}">Войти</a>
+  {% endif %}
+  <a href="{% url 'myauth:users' %}">К списку пользователей</a>
+{% endblock body %}

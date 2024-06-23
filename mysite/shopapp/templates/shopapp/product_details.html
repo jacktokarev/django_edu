@@ -1,0 +1,44 @@
+{% extends "shopapp/base.html" %}
+{% load i18n %}
+{% block title %}
+  {% translate "Product" %} №{{ product.pk }}
+{% endblock title %}
+{% block body %}
+  <h1>{% translate "Product" %} <strong>{{ product.name }}</strong></h1>
+  <div>
+    <div>{% translate "Description" %}: <em>{{ product.description }}</em></div>
+    <div>{% translate "Price" %}: {{ product.price }}</div>
+    <div>{% translate "Discount" %}: {{ product.discount }}</div>
+    <div>
+      {% translate "Archived" %}:
+      {% if product.archived %}
+        {% translate "yes" %}
+      {% else %}
+        {% translate "no" %}
+      {% endif %}
+    </div>
+    {% if product.preview %}
+      <img src="{{ product.preview.url }}" alt="{{ product.preview.name }}">
+    {% endif %}
+    <h3>{% translate "Images" %}:</h3>
+    <div>
+      {% for img in product.images.all %}
+        <div>
+          <img src="{{ img.image.url }}" alt="{{ img.image.name }}">
+          <div>{{ img.description }}</div>
+        </div>
+      {% empty %}
+        <div>{% translate "No images uploaded yet" %}</div>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    {% if perms.shopapp.change_product %}
+      <p><a href="{% url 'shopapp:product_update' pk=product.pk %}">{% translate "Change product" %}</a></p>
+    {% endif %}
+    {% if perms.shopapp.delete_product %}
+      <p><a href="{% url 'shopapp:product_archive' pk=product.pk %}">{% translate "Archiving product" %}</a></p>
+    {% endif %}
+    <p><a href="{% url 'shopapp:products' %}">{% translate "Return to product list" %}</a></p>
+  </div>
+{% endblock %}

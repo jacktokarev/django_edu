@@ -1,0 +1,17 @@
+{% extends "myauth/base.html" %}
+{% block title %}
+    Logout
+{% endblock title %}
+{% block body %}
+  <div>
+    {% if user.is_authenticated %}
+      <form method="post">
+        {% csrf_token %}
+          <p>{{ user }}, Вы действительно хотите выйти?</p>
+          <button type="submit">Выйти</button>
+      </form>
+    {% else %}
+      <p>Вход не выполнен.</p>
+    {% endif %}
+  </div>
+{% endblock body %}

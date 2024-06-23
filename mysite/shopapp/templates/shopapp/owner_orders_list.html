@@ -1,0 +1,35 @@
+{% extends "shopapp/base.html" %}
+{% load i18n %}
+{% load cache %}
+{% block title %}
+  {% translate "Owner" %} {{ owner.username }} {% translate "orders" %}
+{% endblock title %}
+{% block body %}
+  <h1>{% translate "Owner" %} {% firstof owner.first_name owner.username %} {% translate "completed the following orders" %}</h1>
+  <div>
+    {% if orders %}
+      {% cache 180 orders_owner owner.pk %}
+      {% for order in orders %}
+        <div>
+          <h2><a href="{% url 'shopapp:order_details' pk=order.pk %}"
+            >{% translate "Order" %} №{{ order.pk }}</a></h2>
+          {% if order.products %}
+          {% translate "(no discounts)" as no_discounts %}
+            <ul>
+            {% for product in order.products.all %}
+              <li>
+                {{ product.name }} {% translate "at price" %} {{ product.price }}{% translate "$, with discount" %} {% firstof product.discount  no_discounts %}%
+              </li>
+            {% endfor %}
+            </ul>
+            <p>{% translate "With promocode" %}:<code> {{ order.promocode }}</code></p>
+            <p>{% translate "Delivery address" %}: {{ order.delivery_address }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+      {% endcache %}
+    {% else %}
+      <h3>{% translate "The owner" %} {% firstof owner.first_name owner.username %} {% translate "has no orders yet" %}</h3>
+    {% endif %}
+  </div>
+{% endblock body %}

@@ -1,0 +1,10 @@
+[
+    {
+        "model": "shopapp.order_products",
+        "pk": 1,
+        "fields": {
+            "order": 1,
+            "product": 2
+        }
+    }
+]

@@ -1,0 +1,34 @@
+{% extends "shopapp/base.html" %}
+{% load i18n %}
+{% block title %}
+  {% translate "Products list" %}
+{% endblock title %}
+{% block body %}
+<h1>{% translate "Products" %}:</h1>
+  {% if products %}
+    <ul>
+    {% for product in products %}
+      <li>
+        <div>
+          <h3><a href="{% url 'shopapp:product_details' pk=product.pk %}"
+            >{% translate "Name" context "product name" %}: {{ product.name }}</a></h3>
+          <p>{% translate "Price" %}: {{ product.price }}</p>
+          {% translate "no discount" as no_discount %}
+          <p>{% translate "Discount" %}: {% firstof product.discount no_discount %}</p>
+          <p>{{ product.description }}</p>
+          <p>{% translate "receipt date" %}: {{ product.created_at|date:"H:i d.m.Y" }}</p>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <h3>{% translate "No products yet" %}</h3>
+    {% endif %}
+  {% if perms.shopapp.add_product %}
+  <div>
+    <a href="{% url "shopapp:product_create" %}">
+      {% translate "Create a new product" %}
+    </a>
+  </div>
+  {% endif %}
+{% endblock body %}

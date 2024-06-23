@@ -1,0 +1,39 @@
+{% extends "myauth/base.html" %}
+{% block title %}
+  MyAuth
+{% endblock title %}
+{% block to_index %}{% endblock to_index %}
+{% block body %}
+<header>
+{% block header %}
+  <div>
+    {% if user.is_authenticated %}
+      <p>{{ user }}, вход выполннен</p>
+      <p>
+       <a href="{% url 'myauth:about-me' %}">Обо мне</a>
+      </p>
+      {% firstof  "myauth:logout" as action_url %}
+      {% firstof "Выход" as button_str %}
+      {% firstof "myauth:users" as link_url %}
+      {% firstof "К списку пользователей" as link_str %}
+    {% else %}
+      {% firstof  "myauth:login" as action_url %}
+      {% firstof "Вход" as button_str %}
+      {% firstof "myauth:register" as link_url %}
+      {% firstof "Зарегистрироваться" as link_str %}
+    {% endif %}
+    <form action="{% url action_url %}" method="post">
+      {% csrf_token %}
+      <button type="submit">{{button_str}}</button>
+    </form>
+    <p>
+      <a href="{% url link_url %}">{{ link_str }}</a>
+    </p>
+  </div>
+{% endblock header %}
+</header>
+  <p><a href={% url "myauth:cookies-set" %}>Установить cookies</a></p>
+  <p><a href={% url "myauth:cookies-get" %}>Прочитать cookies</a></p>
+  <p><a href={% url "myauth:session-set" %}>Установить session</a></p>
+  <p><a href={% url "myauth:session-get" %}>Прочитать session</a></p>
+{% endblock body %}

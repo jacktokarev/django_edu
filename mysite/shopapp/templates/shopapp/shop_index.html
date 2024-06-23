@@ -1,0 +1,42 @@
+{% extends "./base.html" %}
+  {% load i18n %}
+{% block title %}
+  {% translate "Clothing store" %}
+{% endblock title %}
+{% block body %}
+{% block main %}
+{% endblock main %}
+  <h1>{% translate "Welcom to Clothing store" %}</h1>
+  <ul>
+      <li>
+        <a href="{% url "shopapp:products" %}">
+          {% translate "Product list" %}
+        </a>
+      </li>
+      <li>
+        <a href="{% url "shopapp:orders" %}">
+          {% translate "Orders list" %}
+        </a>
+      </li>
+  </ul>
+  <div>
+    {% translate "Today" %} {{ now_time|date:"l j F Y" }}
+  </div>
+  <div>
+    {% translate "Visit time" %}: {{ now_time|date:"H:i" }}
+  </div>
+  <div>
+    <h2>{% translate "The shop presents" %}:</h2>
+    {% blocktranslate count products_count=products|length  %}
+    {% plural %}
+      Total {{ products_count }} products.
+    {% endblocktranslate %}
+    <ul>
+      {% for product in products %}
+        <li>
+          {{ product.name }};
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock body %}

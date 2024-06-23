@@ -1,0 +1,35 @@
+{% extends "shopapp/base.html" %}
+{% load i18n %}
+{% block title %}
+  {% translate "Orders list" %}
+{% endblock title%}
+{% block body %}
+  <h1>{% translate "Orders list" %}:</h1>
+  {% if orders %}
+  <div>
+    {% for order in orders %}
+      <div>
+        <h2><a href="{% url 'shopapp:order_details' pk=order.pk %}"
+          >{% translate "Order" %} №{{ order.pk }}; {% translate "user" %}: {% firstof order.user.first_name order.user.username %}</a></h2>
+        {% if order.products %}
+        {% translate "(no discounts)" as no_discounts %}
+          <ul>
+          {% for product in order.products.all %}
+            <li>
+              {{ product.name }} {% translate "at price" %} {{ product.price }}{% translate "$, with discount" %} {% firstof product.discount  no_discounts %}%
+            </li>
+          {% endfor %}
+          </ul>
+          <p>{% translate "With promocode" %}:<code> {{ order.promocode }}</code></p>
+          <p>{% translate "Delivery address" %}: {{ order.delivery_address }}</p>
+        {% endif %}
+        </div>
+    {% endfor %}
+  {% else %}
+    <h3>{% translate "No orders yet" %}</h3>
+  {% endif %}
+    <a href="{% url "shopapp:order_create" %}">
+      {% translate "Create order" %}
+    </a>
+  </div>
+{% endblock body %}

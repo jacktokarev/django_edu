@@ -1,0 +1,375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-11 14:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: myauth/validators.py:19
+msgid "Size {value!s} incorrect"
+msgstr "Size {value!s} incorrect"
+
+#: myauth/views.py:16
+msgid "Нello world!"
+msgstr "Hello world!"
+
+#: myauth/views.py:22
+#, python-brace-format
+msgid "one product"
+msgid_plural "{count} products"
+msgstr[0] "One product"
+msgstr[1] "{count} products"
+
+#: mysite/settings.py:128
+msgid "English"
+msgstr "English"
+
+#: mysite/settings.py:129
+msgid "Russian"
+msgstr "Russian"
+
+#: shopapp/models.py:25 shopapp/models.py:38
+#: shopapp/templates/shopapp/product_details.html:4
+msgid "Product"
+msgstr "Product"
+
+#: shopapp/models.py:26 shopapp/models.py:58
+msgid "s"
+msgstr "s"
+
+#: shopapp/models.py:28
+msgid "Name"
+msgstr "Name"
+
+#: shopapp/models.py:29
+msgid "Description"
+msgstr "Description"
+
+#: shopapp/models.py:30 shopapp/templates/shopapp/products_list.html:15
+msgid "Price"
+msgstr "Price"
+
+#: shopapp/models.py:31 shopapp/templates/shopapp/products_list.html:17
+msgid "Discount"
+msgstr "Discount"
+
+#: shopapp/models.py:32
+msgid "Receipt date"
+msgstr "Receipt date"
+
+#: shopapp/models.py:33
+msgid "Inspector"
+msgstr "Inspector"
+
+#: shopapp/models.py:34
+msgid "Is archived"
+msgstr "Is archived"
+
+#: shopapp/models.py:57 shopapp/templates/shopapp/order_details.html:4
+#: shopapp/templates/shopapp/order_details.html:7
+#: shopapp/templates/shopapp/orders_list.html:13
+msgid "Order"
+msgstr "Order"
+
+#: shopapp/models.py:61 shopapp/templates/shopapp/order_details.html:11
+#: shopapp/templates/shopapp/orders_list.html:24
+msgid "Delivery address"
+msgstr "Delivery address"
+
+#: shopapp/models.py:62 shopapp/templates/shopapp/order_details.html:10
+msgid "Promocode"
+msgstr "Promocode"
+
+#: shopapp/models.py:63
+msgid "Date of creation"
+msgstr "Date of creation"
+
+#: shopapp/models.py:64 shopapp/templates/shopapp/order_details.html:9
+msgid "User"
+msgstr "User"
+
+#: shopapp/models.py:65 shopapp/templates/shopapp/products_list.html:7
+msgid "Products"
+msgstr "Products"
+
+#: shopapp/templates/shopapp/base.html:9
+msgid "Title"
+msgstr "Title"
+
+#: shopapp/templates/shopapp/base.html:17
+msgid "Back to main page"
+msgstr "Back to main page"
+
+#: shopapp/templates/shopapp/base.html:23
+msgid "Block body"
+msgstr "Block body"
+
+#: shopapp/templates/shopapp/create_order.html:4
+#: shopapp/templates/shopapp/create_order.html:7
+#: shopapp/templates/shopapp/orders_list.html:32
+msgid "Create order"
+msgstr "Create order"
+
+#: shopapp/templates/shopapp/create_order.html:11
+#: shopapp/templates/shopapp/create_product.html:11
+#: shopapp/templates/shopapp/groups_list.html:13
+msgid "Create"
+msgstr "Create"
+
+#: shopapp/templates/shopapp/create_order.html:15
+#: shopapp/templates/shopapp/order_details.html:23
+msgid "Back to orders list"
+msgstr "Back to orders list"
+
+#: shopapp/templates/shopapp/create_product.html:4
+msgid "Create product"
+msgstr "Create a new product"
+
+#: shopapp/templates/shopapp/create_product.html:7
+msgid "Create new product"
+msgstr "Create a new product"
+
+#: shopapp/templates/shopapp/create_product.html:15
+msgid "Back to products list"
+msgstr "Back to products list"
+
+#: shopapp/templates/shopapp/groups_list.html:4
+msgid "Groups list"
+msgstr "Groups list"
+
+#: shopapp/templates/shopapp/groups_list.html:7
+msgid "Groups"
+msgstr "Groups"
+
+#: shopapp/templates/shopapp/groups_list.html:17
+msgid "There are no groups yet"
+msgstr "There are no groups yet"
+
+#: shopapp/templates/shopapp/order_confirm_delete.html:4
+msgid "Order delete"
+msgstr "Order delete"
+
+#: shopapp/templates/shopapp/order_confirm_delete.html:7
+msgid "Confirm to delete order"
+msgstr "Confirm to delete order"
+
+#: shopapp/templates/shopapp/order_confirm_delete.html:11
+msgid "Back to order"
+msgstr "Back to order"
+
+#: shopapp/templates/shopapp/order_confirm_delete.html:19
+msgid "Delete"
+msgstr "Delete"
+
+#: shopapp/templates/shopapp/order_details.html:13
+msgid "Products in order"
+msgstr "Products in order"
+
+#: shopapp/templates/shopapp/order_details.html:17
+msgid "price"
+msgstr "price"
+
+#: shopapp/templates/shopapp/order_details.html:21
+msgid "Change order"
+msgstr "Change order"
+
+#: shopapp/templates/shopapp/order_details.html:22
+msgid "Delete order"
+msgstr "Delete order"
+
+#: shopapp/templates/shopapp/order_update.html:4
+#: shopapp/templates/shopapp/order_update.html:7
+msgid "Update order"
+msgstr "Update order"
+
+#: shopapp/templates/shopapp/order_update.html:12
+msgid "Update"
+msgstr "Update"
+
+#: shopapp/templates/shopapp/order_update.html:17
+msgid "Back to order detail"
+msgstr "Back to order detail"
+
+#: shopapp/templates/shopapp/orders_list.html:4
+#: shopapp/templates/shopapp/orders_list.html:7
+#: shopapp/templates/shopapp/shop_index.html:18
+msgid "Orders list"
+msgstr "Orders list"
+
+#: shopapp/templates/shopapp/orders_list.html:13
+msgid "user"
+msgstr "user"
+
+#: shopapp/templates/shopapp/orders_list.html:15
+msgid "(no discounts)"
+msgstr "(no discounts)"
+
+#: shopapp/templates/shopapp/orders_list.html:19
+msgid "at price"
+msgstr "at price"
+
+#: shopapp/templates/shopapp/orders_list.html:19
+msgid "$, with discount"
+msgstr "$, with discount"
+
+#: shopapp/templates/shopapp/orders_list.html:23
+msgid "With promocode"
+msgstr "With promocode"
+
+#: shopapp/templates/shopapp/orders_list.html:29
+msgid "No orders yet"
+msgstr "No orders yet"
+
+#: shopapp/templates/shopapp/product_confirm_archive.html:4
+msgid "Confirm archiving"
+msgstr "Convirm archiving"
+
+#: shopapp/templates/shopapp/product_confirm_archive.html:7
+msgid "Are you sure you want to archive the product"
+msgstr "Are you sure you want to archive the product"
+
+#: shopapp/templates/shopapp/product_confirm_archive.html:11
+#: shopapp/templates/shopapp/product_update.html:15
+msgid "Back to product"
+msgstr "Back to product"
+
+#: shopapp/templates/shopapp/product_confirm_archive.html:19
+msgid "Archiving"
+msgstr "Archiving"
+
+#: shopapp/templates/shopapp/product_details.html:7
+#, python-format
+msgid ""
+"\n"
+"  <h1>Product <strong>%(product.name)s</strong></h1>\n"
+"  <div>\n"
+"    <div>Description: <em>%(product.description)s</em></div>\n"
+"    <div>Price: %(product.price)s</div>\n"
+"    <div>Discount: %(product.discount)s</div>\n"
+"    "
+msgstr ""
+"\n"
+"  <h1>Product <strong>%(product.name)s</strong></h1>\n"
+"  <div>\n"
+"    <div>Description: <em>%(product.description)s</em></div>\n"
+"    <div>Price: %(product.price)s</div>\n"
+"    <div>Discount: %(product.discount)s</div>\n"
+"    "
+
+#: shopapp/templates/shopapp/product_details.html:15
+msgid "Archived"
+msgstr "Archived"
+
+#: shopapp/templates/shopapp/product_details.html:17
+msgid "yes"
+msgstr "yes"
+
+#: shopapp/templates/shopapp/product_details.html:19
+msgid "no"
+msgstr "no"
+
+#: shopapp/templates/shopapp/product_details.html:25
+msgid "Images"
+msgstr "Images"
+
+#: shopapp/templates/shopapp/product_details.html:33
+msgid "No images uploaded yet"
+msgstr "No images uploaded yet"
+
+#: shopapp/templates/shopapp/product_details.html:39
+#: shopapp/templates/shopapp/product_update.html:4
+#: shopapp/templates/shopapp/product_update.html:7
+msgid "Change product"
+msgstr "Change product"
+
+#: shopapp/templates/shopapp/product_details.html:42
+msgid "Archiving product"
+msgstr "Archiving product"
+
+#: shopapp/templates/shopapp/product_details.html:44
+msgid "Return to product list"
+msgstr "Return to product list"
+
+#: shopapp/templates/shopapp/product_update.html:11
+msgid "Change"
+msgstr "Change"
+
+#: shopapp/templates/shopapp/products_list.html:4
+msgid "Products list"
+msgstr "Products list"
+
+#: shopapp/templates/shopapp/products_list.html:14
+msgctxt "product name"
+msgid "Name"
+msgstr "Name"
+
+#: shopapp/templates/shopapp/products_list.html:16
+msgid "no discount"
+msgstr "no discount"
+
+#: shopapp/templates/shopapp/products_list.html:19
+msgid "receipt date"
+msgstr "receipt date"
+
+#: shopapp/templates/shopapp/products_list.html:25
+msgid "No products yet"
+msgstr "No products yet"
+
+#: shopapp/templates/shopapp/products_list.html:30
+msgid "Create a new product"
+msgstr "Create a new product"
+
+#: shopapp/templates/shopapp/shop_index.html:4
+msgid "Clothing store"
+msgstr "Clothing store"
+
+#: shopapp/templates/shopapp/shop_index.html:9
+msgid "Welcom to Clothing store"
+msgstr "Welcom to Clothing store"
+
+#: shopapp/templates/shopapp/shop_index.html:13
+msgid "Product list"
+msgstr "Products list"
+
+#: shopapp/templates/shopapp/shop_index.html:23
+msgid "Today"
+msgstr "Today"
+
+#: shopapp/templates/shopapp/shop_index.html:26
+msgid "Visit time"
+msgstr "Visit time"
+
+#: shopapp/templates/shopapp/shop_index.html:29
+msgid "The shop presents"
+msgstr "The shop presents"
+
+#: shopapp/templates/shopapp/shop_index.html:30
+#, python-format
+msgid ""
+"\n"
+"    "
+msgid_plural ""
+"\n"
+"      Total %(products_count)s products.\n"
+"    "
+msgstr[0] ""
+"\n"
+"      Total %(products_count)s product.\n"
+"    "
+msgstr[1] ""
+"\n"
+"      Total %(products_count)s products.\n"
+"    "

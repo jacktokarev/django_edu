@@ -1,0 +1,30 @@
+[
+    {
+        "model": "auth.group",
+        "pk": 1,
+        "fields": {
+            "name": "ShopInspectors",
+            "permissions": [
+                30,
+                31,
+                32,
+                25,
+                26,
+                27,
+                28
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 2,
+        "fields": {
+            "name": "ShopClients",
+            "permissions": [
+                29,
+                32,
+                28
+            ]
+        }
+    }
+]

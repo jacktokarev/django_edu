@@ -1,0 +1,10 @@
+{% if upload_result %}
+  <p>{{ upload_result }}</p>
+{% endif %}
+{% if permission %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="avatar">
+    <button type="submit">{{ action }} аватар</button>
+  </form>
+{% endif %}

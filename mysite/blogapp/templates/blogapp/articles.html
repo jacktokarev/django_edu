@@ -1,0 +1,37 @@
+{% extends "blogapp/base.html" %}
+{% block title %}
+  Articles
+{% endblock title %}
+{% block body %}
+  {% if articles %}
+    <h2>Articles list:</h2>
+    <ul>
+      {% for article in articles %}
+        <li>
+          <h3>
+            <a href="{% url 'blogapp:article-details' pk=article.pk %}">{{ article.title }}</a>
+          </h3>
+          <p><i>publication date {{ article.pub_date }}</i></p>
+          <p>article author is <b>{{ article.author.name }}</b></p>
+          <p>article ctegory is {{ article.category.name }}</p>
+          {% if article.tags.all %}
+            <p>article tags:</p>
+            <ul>
+            {% for tag in article.tags.all %}
+              <li>{{ tag.name }}</li>
+            {% endfor %}
+            </ul>
+          {% else %}
+            <p>This article has no tags</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <h2>No articles have been created yet.</h2>
+  {% endif %}
+  <p><a href="{% url "blogapp:create-author" %}">Create a new author</a></p>
+  <p><a href="{% url "blogapp:create-category" %}">Create a new category</a></p>
+  <p><a href="{% url "blogapp:create-tag" %}">Create a new tag</a></p>
+  <p><a href="{% url "blogapp:create-article" %}">Create a new article</a></p>
+{% endblock body %}

@@ -1,0 +1,29 @@
+{% extends "myauth/base.html" %}
+{% block body %}
+  <h1>О пользователе</h1>
+  <h2>Детали:</h2>
+  <p>Пользователь: {{ selected_user.username }}</p>
+  <p>Имя: {{ selected_user.first_name }}</p>
+  <p>Фамилия: {{ selected_user.last_name }}</p>
+  <p>E-mail: {{ selected_user.email }}</p>
+  <p>Биография: {{ selected_user.profile.bio }}</p>
+  {% if selected_user.profile.avatar %}
+    <div>
+      <img src={{ selected_user.profile.avatar.url }} alt="avatar for user_"{{ selected_user.username }}>
+    </div>
+    {% firstof "Изменить" as action %}
+  {% else %}
+    <p>Пользователь {{ selected_user.username }} не загрузил аватар</p>
+    {% firstof "Загрузить" as action %}
+  {% endif %}
+  {% if user.is_staff or selected_user.pk == user.pk %}
+    <div>
+      <a href="{% url 'myauth:user-profile-update' pk=selected_user.profile.pk %}">Обновить дополнительные данные пользователя</a>
+    </div>
+    <div>
+      <a href="{% url 'myauth:user-update' pk=selected_user.pk %}">Обновить основные данные пользователя</a>
+    </div>
+    {% comment %} {% if not upload_result %}{% firstof True as permission %}{% endif %}
+    {% include "myauth/avatar-upload.html" %} {% endcomment %}
+  {% endif %}
+{% endblock body %}
