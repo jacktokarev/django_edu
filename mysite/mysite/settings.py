@@ -245,7 +245,7 @@ CACHES = {
 LOGFILES_DIR = BASE_DIR / "log"
 LOGFILES_DIR.mkdir(exist_ok=True)
 
-LOGFILE_NAME = BASE_DIR / "log.txt"
+LOGFILE_NAME = LOGFILES_DIR / "log.txt"
 LOGFILE_SIZE = 1 * 1024 * 100
 LOGFILE_COUNT = 10
 
@@ -273,17 +273,17 @@ LOGGING = {
             "formatter": "verbose",
         },
     },
-    "loggers": {
-        "": {
-            "level": LOGLEVEL,
-            "handlers": ["console",],
-        },
-    },
-    # "root" : {
-    #     "handlers": [
-    #         "console",
-    #         "logfile"
-    #     ],
-    #     "level": LOGLEVEL,
+    # "loggers": {
+    #     "": {
+    #         "level": LOGLEVEL,
+    #         "handlers": ["console",],
+    #     },
     # },
+    "root" : {
+        "handlers": [
+            "console",
+            "logfile"
+        ],
+        "level": LOGLEVEL,
+    },
 }
