@@ -202,9 +202,11 @@ LANGUAGES = [
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT.mkdir(exist_ok=True)
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "uploads"
+MEDIA_ROOT.mkdir(exist_ok=True)
 
 
 # Default primary key field type

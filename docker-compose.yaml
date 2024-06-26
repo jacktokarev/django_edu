@@ -51,3 +51,5 @@ services:
     volumes:
       - ./mysite/database:/app/database
       - ./mysite/log:/app/log
+      - ./mysite/uploads:/app/uploads
+      - ./mysite/static:/app/static
